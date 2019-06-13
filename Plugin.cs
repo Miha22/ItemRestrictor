@@ -23,27 +23,13 @@ namespace ItemRestrictor
             if (Configuration.Instance.Enabled)
             {
                 _instance = this;
-                Logger.Log("/i by M22 loaded!", ConsoleColor.Yellow);
-                Logger.Log("/i by M22 loaded!", ConsoleColor.Magenta);
-                Logger.Log("/i by M22 loaded!", ConsoleColor.Green);
+                Logger.Log("ItemRestrictor loaded!", ConsoleColor.Cyan);
             }
             else
             {
                 Logger.Log("Configuration.Instance.Enabled == false");
+                Logger.Log("ItemRestrictor Unloaded!", ConsoleColor.Cyan);
                 this.Unload();
-            }
-        }
-
-        public override TranslationList DefaultTranslations
-        {
-            get
-            {
-                return new TranslationList(){
-                    {"drop_message","Successfully dropped {0} inventory!" },
-                    {"drop_message_id","Successfully dropped {0} from {1} inventory!"},
-                    {"drop_message_public","Successfully dropped all players inventory!" },
-                    {"drop_message_id_public","Successfully dropped {0} from all players inventory!"},
-                };
             }
         }
 
